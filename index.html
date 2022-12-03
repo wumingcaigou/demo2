@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <META HTTP-EQUIV="imagetoolbar" CONTENT="no">  
-<!--    <title>学生进出学校核验</title>-->
+    <META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+    <!--    <title>学生进出学校核验</title>-->
     <title>学生进出学校核验</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="./fx_files/weui.css">
@@ -15,7 +16,7 @@
         function setCookie(name, id, institute) {
             // set expire to 7 days later
             var date = new Date();
-            date.setTime(date.getTime() + (7*24*60*60*1000));
+            date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
 
             document.cookie = "name=" + encodeURIComponent(name);
             document.cookie = "id=" + encodeURIComponent(id);
@@ -44,7 +45,7 @@
             var id = getCookie('id')
             var institute = getCookie('institute')
 
-            if(name === undefined || id === undefined || institute === undefined) {
+            if (name === undefined || id === undefined || institute === undefined) {
                 console.log("Cookie not found.")
                 return false
             } else {
@@ -59,18 +60,18 @@
 
         // random string function copied from StackOverflow
         function generateId(length) {
-            var result           = '';
-            var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             var charactersLength = characters.length;
-            for ( var i = 0; i < length; i++ ) {
-                result += characters.charAt(Math.floor(Math.random() * 
-                charactersLength));
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() *
+                    charactersLength));
             }
             return result;
         }
 
         //得到时间并写入div
-        function getDate(){
+        function getDate() {
             //获取当前时间
             var date = new Date();
             //格式化为本地时间格式
@@ -81,7 +82,7 @@
             div1.innerHTML = date1;
         }
         //使用定时器每秒向div写入当前时间
-        setInterval("getDate()",1000);
+        setInterval("getDate()", 1000);
 
         // set personal info and else
         window.onload = function () {
@@ -91,15 +92,15 @@
             var institute = ''
 
             // if (dataFromCookie == false) {
-                name = "詹浩瀚"
-                id = "202134261153"
-                institute = "信息科学技术学院"
+            name = "赵培羽"
+            id = "202134261069"
+            institute = "信息科学技术学院"
 
-                // setCookie(name, id, institute)
+            // setCookie(name, id, institute)
             // } else {
-                // name = dataFromCookie[0]
-                // id = dataFromCookie[1]
-                // institute = dataFromCookie[2]
+            // name = dataFromCookie[0]
+            // id = dataFromCookie[1]
+            // institute = dataFromCookie[2]
             // }
 
             var nameHolder = document.getElementById("name")
@@ -116,80 +117,86 @@
             rCodeHolder.innerHTML = "随机码：" + generateId(6)
 
             // register onclick event
-            nameHolder.onclick = function() { nameHolder.innerHTML = prompt("请输入姓名", "马克思") ?? "马克思"; updateCookie() }
-            idHolder.onclick = function() { idHolder.innerHTML = prompt("请输入学号", "1000000001") ?? "1000000001"; updateCookie() }
-            instituteHolder.onclick = function() { instituteHolder.innerHTML = prompt("请输入所在学院", "家里蹲学院") ?? "家里蹲学院"; updateCookie() }
+            nameHolder.onclick = function () { nameHolder.innerHTML = prompt("请输入姓名", "马克思") ?? "马克思"; updateCookie() }
+            idHolder.onclick = function () { idHolder.innerHTML = prompt("请输入学号", "1000000001") ?? "1000000001"; updateCookie() }
+            instituteHolder.onclick = function () { instituteHolder.innerHTML = prompt("请输入所在学院", "家里蹲学院") ?? "家里蹲学院"; updateCookie() }
 
-            mCodeHolder.onclick = function() { mCodeHolder.innerHTML = prompt("请输入神秘代码", "1374") ?? "1374" }
-            rCodeHolder.onclick = function() { rCodeHolder.innerHTML = "随机码：" + generateId(6) }
+            mCodeHolder.onclick = function () { mCodeHolder.innerHTML = prompt("请输入神秘代码", "1374") ?? "1374" }
+            rCodeHolder.onclick = function () { rCodeHolder.innerHTML = "随机码：" + generateId(6) }
         }
     </script>
     <script src="./fx_files/safe.js"></script>
     <style>
-     @keyframes scaleDraw {
-        /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
-                0% {
-        transform:scale(1);
-        /*开始为原始大小*/
-    }
-    25% {
-        transform:scale(1.1);
-        /*放大1.1倍*/
-    }
-    50% {
-        transform:scale(1);
-    }
-    75% {
-        transform:scale(1.1);
-    }
-    }.zp {
-        /* -webkit-animation-name:scaleDraw; */
-        /*关键帧名称*/
-        -webkit-animation-timing-function:ease-in-out;
-        /*动画的速度曲线*/
-        -webkit-animation-iteration-count:infinite;
-        /*动画播放的次数*/
-        -webkit-animation-duration:4s;
-        /*动画所花费的时间*/
-    }
+        @keyframes scaleDraw {
 
-    .bUtonadaLij {
-    width: 218rpx;
-    height: 80rpx;
-    /*background: #FFF;*/
-    border-radius: 40rpx;
-    line-height: 80rpx;
-    text-align: center;
-    font-size: 28rpx;
-    color: #006a4c;
-    border: 2rpx solid #006a4c;
-    font-weight: bold;
-    /* -webkit-animation-name: scaleDraw; */
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 3s;
-    }
+            /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+            0% {
+                transform: scale(1);
+                /*开始为原始大小*/
+            }
 
-    @keyframes scaleDraw {
-        0% {
-            transform: scale(1);
+            25% {
+                transform: scale(1.1);
+                /*放大1.1倍*/
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
         }
 
-        25% {
-            transform: scale(.8);
+        .zp {
+            /* -webkit-animation-name:scaleDraw; */
+            /*关键帧名称*/
+            -webkit-animation-timing-function: ease-in-out;
+            /*动画的速度曲线*/
+            -webkit-animation-iteration-count: infinite;
+            /*动画播放的次数*/
+            -webkit-animation-duration: 4s;
+            /*动画所花费的时间*/
         }
 
-        50% {
-            transform: scale(1);
+        .bUtonadaLij {
+            width: 218rpx;
+            height: 80rpx;
+            /*background: #FFF;*/
+            border-radius: 40rpx;
+            line-height: 80rpx;
+            text-align: center;
+            font-size: 28rpx;
+            color: #006a4c;
+            border: 2rpx solid #006a4c;
+            font-weight: bold;
+            /* -webkit-animation-name: scaleDraw; */
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 3s;
         }
 
-        75% {
-            transform: scale(.8);
-        }
-    }
+        @keyframes scaleDraw {
+            0% {
+                transform: scale(1);
+            }
 
+            25% {
+                transform: scale(.8);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(.8);
+            }
+        }
     </style>
 </head>
+
 <body>
 
 
@@ -205,8 +212,9 @@
         <p style="font-size: 16px; text-align:center;">
         </p>
         <div id="qr" class="tcenter" style="padding: 10px;height:170px;">
-                   <img class='zp' width="140px" height="160px" src="cssjs/imgs/fail.jpg"> <!--<img class='zp' width="160px" height="160px" src="cssjs/imgs/www.png">-->
-            
+            <img class='zp' width="140px" height="160px" src="cssjs/imgs/fail.jpg">
+            <!--<img class='zp' width="160px" height="160px" src="cssjs/imgs/www.png">-->
+
         </div>
 
         <p style="font-size: 16px; text-align:center;">
@@ -217,19 +225,20 @@
         <p style="font-size: 20px; font-weight:bold;" align="center"><span id='times'></span></p>
     </div>
     <div class="page-hd cl5">
-        <p id="mysteriousCode" style="font-size: 20px; font-weight:bold;text-align: center; margin-top: -30px;">           
-            </p>
-    </div>  
-            <div id="colorDIV" class="page-hd cl6 cl6_blue" permit="blue">        
-                <p style=" color:#fff;   font-size: 25px;  font-weight: 200;" align="center" class="bUtonadaLij">予以通行</p>
-                <!-- <p id="randomCode" style=" color:#fff;   font-size: 15px;  font-weight: 200; text-align: center; margin-top: 5px;">随机码：4Zhsrx</p> -->
-            </div>
+        <p id="mysteriousCode" style="font-size: 20px; font-weight:bold;text-align: center; margin-top: -30px;">
+        </p>
+    </div>
+    <div id="colorDIV" class="page-hd cl6 cl6_blue" permit="blue">
+        <p style=" color:#fff;   font-size: 25px;  font-weight: 200;" align="center" class="bUtonadaLij">予以通行</p>
+        <!-- <p id="randomCode" style=" color:#fff;   font-size: 15px;  font-weight: 200; text-align: center; margin-top: 5px;">随机码：4Zhsrx</p> -->
+    </div>
 
 
     <div class="page-hd cl7"></div>
     <div class="page-hd cl8"></div>
 
-        
-            
+
+
 </body>
-</html>  
+
+</html>
